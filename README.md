@@ -16,14 +16,15 @@ interoperable with other systems.
 
 # Getting started
 
-You can install with `npm i hcl-to-json` then simply require and pass HCL
+You can install with `npm i hcl-to-json -g` then simply require and pass HCL
 content to get JSON output. _If you have a bad HCL content it's suggested to
 call in `try .. catch` block_
 
 ```coffee
 
 hcltojson = require 'hcltojson'
-JSON.stringify hcltojson """
+
+hcltojson """
 
 foo "bar" {
   baz = 123
@@ -58,6 +59,27 @@ will return following JSON object:
 
 ```
 
+or you can use the `hcltojson` cli for any hcl formatted file or standart
+input;
+
+```
+$ npm install hcl-to-json -g
+$ echo "foo=3" | hcltojson
+{
+    "foo": 3
+}
+
+$ echo "foo bar { baz = 123 }" > test.tf
+$ hcltojson test.tf
+{
+    "foo": {
+        "bar": {
+            "baz": 123
+        }
+    }
+}
+```
+
 You can also try it in your browser from https://runkit.com/npm/hcl-to-json
 
 # Syntax
@@ -67,9 +89,14 @@ Syntax details can be found [here](https://github.com/hashicorp/hcl#syntax)
 
 # Status
 
-It's **experimental** now and in early stages of development, but supports lots of
-samples listed under
+It's **experimental** now and in early stages of development, but supports
+lots of samples listed under
 [test](https://github.com/gokmen/hcl-to-json/tree/master/test) folder.
+
+# Development
+
+You can use `DEBUG="hcltojson:*" npm test watch` while developing for live
+compile and test results with debug output.
 
 # License
 
