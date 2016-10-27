@@ -80,7 +80,9 @@ $ hcltojson test.tf
 }
 ```
 
-You can also try it in your browser from https://runkit.com/npm/hcl-to-json
+In browser you may include the `dist/bundle.js` which will export `hcltojson`
+function into `window`. You can also try it in your browser from
+https://runkit.com/npm/hcl-to-json
 
 # Syntax
 
