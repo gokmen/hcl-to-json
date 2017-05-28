@@ -1,6 +1,6 @@
 {
   "name": "hcl-to-json",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "main": "lib/index.js",
   "scripts": {
     "clean": "rm -rf lib",
@@ -17,9 +17,9 @@
   "license": "MIT",
   "devDependencies": {
     "browserify": "latest",
-    "coffee-script": "^1.11.0",
+    "coffee-script": "^1.12.6",
     "expect": "^1.20.2",
-    "mocha": "^3.0.0",
+    "mocha": "^3.4.2",
     "uglifyify": "^3.0.4"
   },
   "directories": {
@@ -30,7 +30,7 @@
     "hcltojson": "bin/hcltojson.js"
   },
   "dependencies": {
-    "debug": "^2.2.0",
+    "debug": "^2.6.8",
     "lodash.get": "^4.4.2",
     "lodash.set": "^4.3.2"
   },
