@@ -144,6 +144,9 @@ module.exports = hcltojson = (hclInput) ->
           set json, path, list
 
         else
+          if stack.length > 2 and part is stack[stack.length - 1]
+            stack.pop()
+
           stack.push part
           path = stack.join '.'
 

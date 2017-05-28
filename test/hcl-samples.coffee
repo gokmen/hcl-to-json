@@ -520,4 +520,21 @@ EOF
     }
 }
 """
+
+"""
+group "test" {
+  task "a" {
+    name = "A"
+  }
+
+  task "b" {
+    name = "B"
+  }
+
+  task "c" {
+    name = "C"
+  }
+}
+"""
+
 ]
