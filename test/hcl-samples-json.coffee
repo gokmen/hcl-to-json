@@ -575,4 +575,10 @@ module.exports = [{
            ]
        }
    }
-}]
+}
+
+{
+  int: 123,
+  foo: "bar"
+}
+]
