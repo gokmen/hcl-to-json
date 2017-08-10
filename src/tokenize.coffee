@@ -17,7 +17,7 @@ module.exports = tokenize = (input) ->
   debug 'input', input
 
   # remove comments
-  input = input.replace /#.+/igm, ''
+  input = input.replace /#.*/igm, ''
   input = input.replace ///
     ".+?"|\/\*[\s\S]*?\*\/|\/\/.*
   ///gm, (match) ->

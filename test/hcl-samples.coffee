@@ -537,4 +537,10 @@ group "test" {
 }
 """
 
+"""
+int = 123
+# Padded comment
+#
+foo = "bar"
+"""
 ]
