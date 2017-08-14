@@ -34,6 +34,9 @@ module.exports = utils = {
 
     debug 'doConversions.boolean.processed', part
 
+    if part is ''
+      return part
+
     # numeric conversion
     part = +part  unless isNaN "#{part}"
 
