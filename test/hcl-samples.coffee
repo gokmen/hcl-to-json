@@ -543,4 +543,9 @@ int = 123
 #
 foo = "bar"
 """
+
+"""
+emptyString = ""
+numberZero = 0
+"""
 ]
