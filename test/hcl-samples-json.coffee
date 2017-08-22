@@ -586,4 +586,13 @@ module.exports = [{
   emptyString: "",
   numberZero: 0
 }
+
+{
+  hashTag: "#asdf"
+  foo: "bar\"asd"
+}
+
+{
+  multiLineArray: ["#one", "#two", "#three", "#four"]
+}
 ]

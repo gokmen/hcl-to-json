@@ -548,4 +548,18 @@ foo = "bar"
 emptyString = ""
 numberZero = 0
 """
+
+"""
+hashTag = "#asdf"
+foo: "bar\"asd"
+"""
+
+"""
+multiLineArray = [
+  "#one",
+  "#two", # comment
+  # ,"comment"
+  "#three", "#four"
+]
+"""
 ]
