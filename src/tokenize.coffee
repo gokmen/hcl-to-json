@@ -12,16 +12,20 @@ CHARS = [
   ['<<' , TOKENS.HEREDOC  ]
 ]
 
+clearQuotes = (m) -> if m?[0] is '"' then m else ''
+
 module.exports = tokenize = (input) ->
 
   debug 'input', input
 
   # remove comments
-  input = input.replace /#.*/igm, ''
+  input = input.replace ///
+    ".+?"|\#[\s\S]*?.*
+  ///igm, clearQuotes
+
   input = input.replace ///
     ".+?"|\/\*[\s\S]*?\*\/|\/\/.*
-  ///gm, (match) ->
-    if match?[0] is '"' then match else ''
+  ///gm, clearQuotes
 
   debug 'comments.removed', input
 

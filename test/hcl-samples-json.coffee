@@ -586,4 +586,10 @@ module.exports = [{
   emptyString: "",
   numberZero: 0
 }
+
+{
+  hello: "#hello",
+  foo: "# some more #comment foo bar"
+}
+
 ]

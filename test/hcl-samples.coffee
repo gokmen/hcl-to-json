@@ -548,4 +548,11 @@ foo = "bar"
 emptyString = ""
 numberZero = 0
 """
+
+"""
+# comment here
+hello = "#hello" # hello comment
+# some more comment 'foo bar'
+foo = "# some more #comment foo bar"
+"""
 ]
