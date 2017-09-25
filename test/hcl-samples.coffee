@@ -555,4 +555,21 @@ hello = "#hello" # hello comment
 # some more comment 'foo bar'
 foo = "# some more #comment foo bar"
 """
+
+"""
+resource "foo" "bar" {
+  baz = "${test "foo," "comma" in a sentence}"
+  bak = "${test "bar:" "column" in a sentence}"
+  worked = true
+}
+"""
+
+"""
+resource "aws_iam_role" "child_instance_roles" {
+  count              = "${length(split(",", var.child["instance_policy_paths"]))}"
+  name               = "${element(split(",", var.child["instance_policy_names"]), count.index)}"
+  assume_role_policy = "${data.aws_iam_policy_document.ec2_assume_role.json}"
+}
+"""
+
 ]

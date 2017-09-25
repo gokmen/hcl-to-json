@@ -2,7 +2,6 @@ debug  = (require 'debug') 'hcltojson:tokenize'
 TOKENS = require './tokens'
 
 CHARS = [
-  [','  , TOKENS.COMMA    ]
   [':'  , TOKENS.COLON    ]
   ['='  , TOKENS.ASSIGN   ]
   ['{'  , TOKENS.LBRACE   ]
@@ -32,7 +31,7 @@ module.exports = tokenize = (input) ->
   # tokenize input
   for [char, token] in CHARS
     char = "\\#{char}"
-    regex = ///".+?"|(#{char})///g
+    regex = ///".+"|(#{char})///g
     input = input.replace regex, (match, group) ->
       unless group then match else " #{token} "
 

@@ -43,7 +43,6 @@ module.exports = hcltojson = (hclInput) ->
   for part in input.split TOKENS.SPACE
 
     continue  unless part
-    continue  if part is TOKENS.COMMA
 
     debug 'json', JSON.stringify json
 
@@ -139,7 +138,7 @@ module.exports = hcltojson = (hclInput) ->
 
         if inList > 0
           list = get json, path
-          list.push part
+          list.push part.replace /,$/, ''
 
           set json, path, list
 
