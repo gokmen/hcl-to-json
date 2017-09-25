@@ -13,7 +13,7 @@ module.exports = utils = {
 
     [..., context] = res
 
-    return context.trimRight '\n'
+    return context.replace /\n$/, ''
 
 
   doConversions: (part) ->
