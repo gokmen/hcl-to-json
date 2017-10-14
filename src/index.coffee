@@ -43,8 +43,9 @@ module.exports = hcltojson = (hclInput) ->
   for part in input.split TOKENS.SPACE
 
     continue  unless part
+    continue  if part is TOKENS.COMMA
 
-    debug 'json', JSON.stringify json
+    debug 'json', JSON.stringify json, " ", 2
 
     # create stack for active path
     path = stack.join '.'
@@ -116,6 +117,11 @@ module.exports = hcltojson = (hclInput) ->
 
       when TOKENS.LBRACE
         inBlock++
+        if inList > 0
+          if Array.isArray cur = get json, path
+            cur.push {}
+            set json, path, cur
+            stack.push "#{cur.length - 1}"
 
       when TOKENS.RBRACE
         stack.pop()
@@ -137,10 +143,11 @@ module.exports = hcltojson = (hclInput) ->
       else
 
         if inList > 0
-          list = get json, path
-          list.push part.replace /,$/, ''
-
-          set json, path, list
+          if Array.isArray(list = get json, path)
+            list.push part.replace /,$/, ''
+            set json, path, list
+          else if inBlock
+            stack.push part
 
         else
           if stack.length > 2 and part is stack[stack.length - 1]

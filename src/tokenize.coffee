@@ -2,6 +2,7 @@ debug  = (require 'debug') 'hcltojson:tokenize'
 TOKENS = require './tokens'
 
 CHARS = [
+  [','  , TOKENS.COMMA    ]
   [':'  , TOKENS.COLON    ]
   ['='  , TOKENS.ASSIGN   ]
   ['{'  , TOKENS.LBRACE   ]
