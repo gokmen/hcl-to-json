@@ -616,4 +616,27 @@ module.exports = [{
     }
 }
 
+{
+    "resource": {
+        "aws_autoscaling_group": {
+            "example": {
+                "foo": "bar",
+                "name": "example",
+                "tags": [
+                    {
+                        "key": "tag1",
+                        "propagate_at_launch": true,
+                        "value": "value1"
+                    },
+                    {
+                        "key": "tag2",
+                        "propagate_at_launch": true,
+                        "value": "value2"
+                    },
+                ]
+            }
+        }
+    }
+}
+
 ]

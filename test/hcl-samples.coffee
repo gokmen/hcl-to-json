@@ -572,4 +572,24 @@ resource "aws_iam_role" "child_instance_roles" {
 }
 """
 
+"""
+resource "aws_autoscaling_group" "example" {
+  name = "example"
+  foo = "bar"
+
+  tags = [
+    {
+      key = "tag1"
+      value = "value1"
+      propagate_at_launch = true
+    },
+    {
+      key = "tag2"
+      value = "value2"
+      propagate_at_launch = true
+    },
+  ]
+}
+"""
+
 ]
