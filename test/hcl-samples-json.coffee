@@ -639,4 +639,17 @@ module.exports = [{
     }
 }
 
+{
+    "resource": {
+        "aws_instance": {
+            "web1": {
+                "attributes_json": "    {\n        \"key\": \"value\",\n        \"app\": {\n            \"cluster1\": {\n                \"nodes\": [\n                    \"webserver1\",\n                    \"webserver2\"\n                ]\n            }\n        }\n    }"
+            },
+            "web2": {
+                "attributes_json": "    {\n        \"key\": \"value\",\n        \"app\": {\n            \"cluster2\": {\n                \"nodes\": [\n                    \"webserver3\",\n                    \"webserver4\"\n                ]\n            }\n        }\n    }"
+            }
+        }
+    }
+}
+
 ]
