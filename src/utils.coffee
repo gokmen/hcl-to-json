@@ -6,14 +6,17 @@ module.exports = utils = {
 
     debug 'getHereDoc', input, token
 
-    reg = ///<<\s?(.+?)\s((?:.|\n)*)#{token}///gi
+    reg = ///<<\s?(.+?)\s((?:.|\n)*?)#{token}///g
     res = reg.exec input
 
     debug 'getHereDoc.res', res
 
-    [..., context] = res
+    [full, ..., context] = res
 
-    return context.replace /\n$/, ''
+    part = context.replace /\n$/, ''
+    input = input.replace full, ''
+
+    return [ part, input ]
 
 
   doConversions: (part) ->
