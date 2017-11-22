@@ -37,6 +37,7 @@ module.exports = hcltojson = (hclInput) ->
 
   # hereDoc statements
   hereDocPart  = ''
+  hereDocCopy  = "#{hclInput}"
   hereDocToken = null
 
   # loop on parts splitted with spaces
@@ -60,7 +61,8 @@ module.exports = hcltojson = (hclInput) ->
 
       hereDocToken = part
       hereDocAhead = no
-      hereDocPart  = utils.getHereDoc hclInput, hereDocToken
+
+      [ hereDocPart, hereDocCopy ] = utils.getHereDoc hereDocCopy, hereDocToken
 
       debug 'heredoc', part, hereDocPart
 

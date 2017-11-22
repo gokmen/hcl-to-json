@@ -592,4 +592,37 @@ resource "aws_autoscaling_group" "example" {
 }
 """
 
+"""
+resource "aws_instance" "web1" {
+  attributes_json = <<EOF
+    {
+        "key": "value",
+        "app": {
+            "cluster1": {
+                "nodes": [
+                    "webserver1",
+                    "webserver2"
+                ]
+            }
+        }
+    }
+EOF
+}
+resource "aws_instance" "web2" {
+  attributes_json = <<EOF
+    {
+        "key": "value",
+        "app": {
+            "cluster2": {
+                "nodes": [
+                    "webserver3",
+                    "webserver4"
+                ]
+            }
+        }
+    }
+EOF
+}
+"""
+
 ]
