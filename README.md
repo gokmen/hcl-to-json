@@ -1,3 +1,7 @@
+**Archived project. No maintenance.**
+
+This project is not maintained anymore and is archived. Feel free to fork and make your own changes if needed.
+
 # hcl-to-json
 
 [![Build Status](https://travis-ci.org/gokmen/hcl-to-json.svg?branch=master)](https://travis-ci.org/gokmen/hcl-to-json)
